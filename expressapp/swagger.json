@@ -1,0 +1,110 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Calculator & Friends APIs",
+        "description": "APIs to handle calculator operations and Friends information",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Calculator",
+            "description": "API for Calculus in the system"
+        },
+        {
+            "name": "Friends",
+            "description": "API for handling Friends data"
+        }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "/calculator/add": {
+            "get": {
+                "tags": ["Calculator"],
+                "summary": "Add 2 numbers",
+                "parameters": [
+                    { "name": "num1", "in": "query", "description": "the First Number" },
+                    { "name": "num2", "in": "query", "description": "the Second number" }
+                ],
+                "responses": { "200": { "description": "This service allows you to add two numbers together" } }
+            }
+        },
+        "/calculator/subtract": {
+            "get": {
+                "tags": ["Calculator"],
+                "summary": "Subtract 2 numbers",
+                "parameters": [
+                    { "name": "num1", "in": "query", "description": "the First Number" },
+                    { "name": "num2", "in": "query", "description": "the Second number" }
+                ],
+                "responses": { "200": { "description": "This service allows you to subtract two numbers together" } }
+            }
+        },
+        "/calculator/multiply": {
+            "get": {
+                "tags": ["Calculator"],
+                "summary": "Multiply 2 numbers",
+                "parameters": [
+                    { "name": "num1", "in": "query", "description": "the First Number" },
+                    { "name": "num2", "in": "query", "description": "the Second number" }
+                ],
+                "responses": { "200": { "description": "This service allows you to multiply two numbers together" } }
+            }
+        },
+        "/calculator/divide": {
+            "get": {
+                "tags": ["Calculator"],
+                "summary": "Divide 2 numbers",
+                "parameters": [
+                    { "name": "num1", "in": "query", "description": "the First Number" },
+                    { "name": "num2", "in": "query", "description": "the Second number" }
+                ],
+                "responses": { "200": { "description": "This service allows you to divide two numbers together" } }
+            }
+        },
+
+
+
+
+        "/friends": {
+            "get": {
+                "tags": ["Friends"],
+                "summary": "Get all friends",
+                "responses": { "200": { "description": "A list of friends" } }
+            },
+            "post": {
+                "tags": ["Friends"],
+                "summary": "Add a new friend",
+                "responses": { "200": { "description": "New friend added" } }
+            }
+        },
+        "/friends/{id}": {
+            "get": {
+                "tags": ["Friends"],
+                "summary": "Get a single friend by ID",
+                "parameters": [
+                    { "in": "path", "name": "id", "type": "integer", "required": true }
+                ],
+                "responses": {
+                    "200": { "description": "Friend data" },
+                    "404": { "description": "Friend not found" }
+                }
+            },
+            "put": {
+                "tags": ["Friends"],
+                "summary": "Update a friend by ID",
+                "parameters": [
+                    { "in": "path", "name": "id", "type": "integer", "required": true }
+                ],
+                "responses": { "200": { "description": "Updated friend" } }
+            }
+        }
+    }
+}

@@ -1,0 +1,5 @@
+body { font-family: sans-serif; background: rgb(82, 79, 83); color: white; }
+
+button { background: white; color: blueviolet; border: 1px solid white; padding: 5px; }
+
+#result { background: rgb(111, 109, 112); color: white; padding: 5px; }
