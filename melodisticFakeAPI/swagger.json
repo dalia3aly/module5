@@ -1,0 +1,76 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Melodistic E-Commerce API",
+      "description": "API for managing Melodistic's e-commerce products"
+    },
+    "host": "localhost:3000",
+    "basePath": "/api",
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/products": {
+        "get": {
+          "summary": "Get Products by Page",
+          "description": "Retrieve products based on the specified page identifier",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "type": "string",
+              "description": "The page identifier to filter products (e.g., 'home', 'onearrange', 'inearrange')"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "schema": {
+                "$ref": "#/definitions/ProductList"
+              }
+            }
+          }
+        }
+      },
+      "/ '/api/all-products'": {
+        "get": { 
+          "summary": "Get All Products",
+          "description": "Retrieve all products across ranges",
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "schema": {
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Product": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Product name"
+          },
+          "price": {
+            "type": "number",
+            "format": "float",
+            "description": "Product price"
+          },
+          "image": {
+            "type": "string",
+            "description": "URL to the product's image"
+          }
+        }
+      },
+      "ProductList": {
+        "type": "array",
+        "items": {
+        }
+      }
+    }
+  }
+  
